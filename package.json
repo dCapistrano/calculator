@@ -1,0 +1,23 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "A fun test project for kicks",
+  "main": "main.js",
+  "scripts": {
+    "test": "node_modules/ava/cli.js",
+		"test_watch": "node_modules/ava/cli.js test	.js --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dCapistrano/calculator.git"
+  },
+  "author": "Peter and Darryl",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/dCapistrano/calculator/issues"
+  },
+  "homepage": "https://github.com/dCapistrano/calculator#readme",
+  "devDependencies": {
+    "ava": "^0.24.0"
+  }
+}
