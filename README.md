@@ -6,4 +6,5 @@
   * `$ npm install --global ava`
 
 ## To Test
-* `$ npm test`
+* `$ npm test` - One time
+* `$ npm test_watch` - Continuous
