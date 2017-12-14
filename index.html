@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>calculator</title>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+			integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+			crossorigin="anonymous">
+	</script>
+	<script type="text/javascript" src="main.js"></script>
+</head>
+<body>
+	<div>
+		<div>
+			<span id="js-result">0</span>
+		</div>
+		<div>
+			<div>
+				<button onclick="appendNumberToCurrent(7)">7</button>
+				<button onclick="appendNumberToCurrent(8)">8</button>
+				<button onclick="appendNumberToCurrent(9)">9</button>
+			</div>
+			<div>
+				<button onclick="appendNumberToCurrent(4)">4</button>
+				<button onclick="appendNumberToCurrent(5)">5</button>
+				<button onclick="appendNumberToCurrent(6)">6</button>
+			</div>
+			<div>
+				<button onclick="appendNumberToCurrent(1)">1</button>
+				<button onclick="appendNumberToCurrent(2)">2</button>
+				<button onclick="appendNumberToCurrent(3)">3</button>
+			</div>
+		</div>
+		<button onclick="add()">+</button>
+		<button onclick="subtract()">-</button>
+		<button onclick="equals()">=</button>
+	</div>
+</body>
+</html>
