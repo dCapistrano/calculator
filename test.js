@@ -61,6 +61,16 @@ test('add complex', t => {
 	cal.appendNumberToCurrent(4)
 	cal.equal()
 	t.is(cal.runningTotal, 6)
+	cal.add()
+	cal.appendNumberToCurrent(1)
+	cal.equal()
+	t.is(cal.runningTotal, 7)
+	cal.add()
+	cal.add()
+	t.is(cal.runningTotal, 7)
+	cal.appendNumberToCurrent(6)
+	cal.add()
+	t.is(cal.runningTotal, 13)
 })
 
 test('subtract', t => {
