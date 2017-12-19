@@ -1,27 +1,38 @@
-const ADD = 'add'
+var ADD = 'add'
 
 
-let runningTotal = 0
-let currentValue = 0
+var runningTotal = 0
+var currentValue = 0
 
 
 function appendNumberToCurrent(number) {
-	let stringifyNumber = number.toString()
+	var stringifyNumber = number.toString()
 	currentValue = currentValue + stringifyNumber
 	currentValue = parseInt(currentValue)
 	updateResult(currentValue)
 }
 
+
+function updateResult(result) {
+	$('#js-result').html(result)
+}
+
+function add() {
+	console.log('add')
+	runningTotal = runningTotal + currentValue
+	currentValue = 0
+	equals(ADD)
+}
+
+function subtract() {
+
+}
+
 function equals(intendedAction) {
+	console.log('equal')
 	if (intendedAction === ADD) {
 		runningTotal = runningTotal + currentValue
 	}
 	currentValue = 0
 	updateResult(runningTotal)
-}
-
-function add() {
-	runningTotal = runningTotal + currentValue
-	currentValue = 0
-	equals(ADD)
 }
