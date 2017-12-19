@@ -20,13 +20,20 @@ test('appendNumberToCurrent', t => {
 	}, TypeError)
 })
 
+test('equal', t => {
+	cal.runningTotal = 3
+	cal.currentValue = 1
+	cal.currentIntention = 'add'
+	cal.equal()
+	t.is(cal.runningTotal, 4)
+	t.is(cal.currentIntention, null)
+})
+
 test('add', t => {
 	cal.appendNumberToCurrent(1)
 	cal.add()
 	t.is(cal.currentIntention, 'add') // TODO: import consts?
 })
-
-test.todo('equal')
 
 test('basic addition', t => {
 	// Basic
@@ -54,4 +61,32 @@ test('add complex', t => {
 	cal.appendNumberToCurrent(4)
 	cal.equal()
 	t.is(cal.runningTotal, 6)
+})
+
+test('subtract', t => {
+	cal.appendNumberToCurrent(1)
+	cal.subtract()
+	t.is(cal.currentIntention, 'subtract')
+})
+
+test('basic subtraction', t => {
+	cal.appendNumberToCurrent(9)
+	cal.subtract()
+	cal.appendNumberToCurrent(1)
+	cal.equal()
+	t.is(cal.runningTotal, 8)
+})
+
+test('complex subtraction', t => {
+	cal.appendNumberToCurrent(9)
+	cal.subtract()
+	cal.appendNumberToCurrent(1)
+	cal.subtract()
+	cal.appendNumberToCurrent(4)
+	cal.equal()
+	t.is(cal.runningTotal, 4)
+	cal.subtract()
+	cal.appendNumberToCurrent(1)
+	cal.equal()
+	t.is(cal.runningTotal, 3)
 })

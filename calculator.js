@@ -1,4 +1,5 @@
 const ADD = 'add'
+const SUBTRACT = 'subtract'
 
 
 module.exports = {
@@ -22,15 +23,36 @@ module.exports = {
 		this.currentValue = parseInt(this.currentValue)
 	},
 
+	_equal() {
+		if (!this.currentIntention) {
+			return
+		}
+		if (this.runningTotal > 0) {
+			if (this.currentIntention === ADD) {
+				this.runningTotal = this.runningTotal + this.currentValue
+			} else if (this.currentIntention === SUBTRACT) {
+				this.runningTotal = this.runningTotal - this.currentValue
+			}
+		} else {
+			this.runningTotal = this.currentValue
+		}
+	},
+
 	equal() {
-		if (this.currentIntention === ADD) {
-			this.runningTotal = this.runningTotal + this.currentValue
-		} // TODO: Else
+		this._equal()
+		this.currentIntention = null
+		this.currentValue = 0
 	},
 
 	add() {
 		this.currentIntention = ADD
-		this.equal()
+		this._equal()
 		this.currentValue = 0
 	},
+
+	subtract() {
+		this.currentIntention = SUBTRACT
+		this._equal()
+		this.currentValue = 0
+	}
 }
