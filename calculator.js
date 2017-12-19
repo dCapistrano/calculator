@@ -3,9 +3,7 @@ module.exports = {
 	runningTotal: 0,
 
 	appendNumberToCurrent(number) {
-		let stringifyNumber = number.toString()
-		this.currentValue = this.currentValue +
-		stringifyNumber
+		this.currentValue = `${this.currentValue}${number}`
 		this.currentValue = parseInt(this.currentValue)
 	},
 
