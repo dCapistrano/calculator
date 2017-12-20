@@ -25,7 +25,7 @@ module.exports = {
 		this.currentValue = parseInt(this.currentValue)
 	},
 
-	_equal() {
+	_doMath() {
 		if (!this.currentIntention) {
 			return
 		}
@@ -48,32 +48,32 @@ module.exports = {
 	},
 
 	equal() {
-		this._equal()
+		this._doMath()
 		this.currentIntention = null
 		this.currentValue = 0
 	},
 
 	add() {
 		this.currentIntention = ADD
-		this._equal()
+		this._doMath()
 		this.currentValue = 0
 	},
 
 	subtract() {
 		this.currentIntention = SUBTRACT
-		this._equal()
+		this._doMath()
 		this.currentValue = 0
 	},
 
 	multiply() {
 		this.currentIntention = MULTIPLY
-		this._equal()
+		this._doMath()
 		this.currentValue = 0
 	},
 
 	divide() {
 		this.currentIntention = DIVIDE
-		this._equal()
+		this._doMath()
 		this.currentValue = 0
 	},
 }
