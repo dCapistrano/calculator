@@ -27,6 +27,13 @@ test('equal', t => {
 	cal.equal()
 	t.is(cal.runningTotal, 4)
 	t.is(cal.currentIntention, null)
+	cal.clear()
+	cal.runningTotal = 3
+	cal.currentValue = 1
+	cal.currentIntention = 'random'
+	let error = t.throws(() => {
+		cal.equal()
+	}, Error)
 })
 
 test('add', t => {

@@ -39,7 +39,8 @@ module.exports = {
 			} else if (this.currentIntention === DIVIDE) {
 				this.runningTotal = this.runningTotal / this.currentValue
 			} else {
-				throw new Error('No intention set')
+				throw new Error('Intention Type Unknown')
+				return
 			}
 		} else {
 			this.runningTotal = this.currentValue
