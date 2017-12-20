@@ -6,7 +6,15 @@ test.beforeEach(t => {
 	cal.clear()
 })
 
-test.todo('clear')
+test('clear', t => {
+	cal.currentValue = 1
+	cal.runningTotal = 1
+	cal.currentIntention = 'cheese'
+	cal.clear()
+	t.is(cal.currentValue, 0)
+	t.is(cal.runningTotal, 0)
+	t.is(cal.currentIntention, null)
+})
 
 test('appendNumberToCurrent', t => {
 	cal.appendNumberToCurrent(1)
