@@ -39,7 +39,7 @@ test('equal', t => {
 test('add', t => {
 	cal.appendNumberToCurrent(1)
 	cal.add()
-	t.is(cal.currentIntention, 'add') // TODO: import consts?
+	t.is(cal.currentIntention, 'add')
 })
 
 test('basic addition', t => {
