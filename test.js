@@ -106,3 +106,37 @@ test('complex subtraction', t => {
 	cal.subtract()
 	t.is(cal.runningTotal, -1)
 })
+
+test('multiply', t => {
+	cal.appendNumberToCurrent(1)
+	cal.multiply()
+	t.is(cal.currentIntention, 'multiply')
+})
+
+test('basic multiplication', t => {
+	cal.appendNumberToCurrent(9)
+	cal.multiply()
+	cal.appendNumberToCurrent(1)
+	cal.equal()
+	t.is(cal.runningTotal, 9)
+	cal.appendNumberToCurrent(8)
+	cal.multiply()
+	t.is(cal.runningTotal, 72)
+})
+
+test('divide', t => {
+	cal.appendNumberToCurrent(1)
+	cal.divide()
+	t.is(cal.currentIntention, 'divide')
+})
+
+test('basic division', t => {
+	cal.appendNumberToCurrent(9)
+	cal.divide()
+	cal.appendNumberToCurrent(1)
+	cal.equal()
+	t.is(cal.runningTotal, 9)
+	cal.appendNumberToCurrent(8)
+	cal.divide()
+	t.is(cal.runningTotal, 1.125)
+})

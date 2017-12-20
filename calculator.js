@@ -1,5 +1,7 @@
 const ADD = 'add'
 const SUBTRACT = 'subtract'
+const MULTIPLY = 'multiply'
+const DIVIDE = 'divide'
 
 
 module.exports = {
@@ -32,6 +34,12 @@ module.exports = {
 				this.runningTotal = this.runningTotal + this.currentValue
 			} else if (this.currentIntention === SUBTRACT) {
 				this.runningTotal = this.runningTotal - this.currentValue
+			} else if (this.currentIntention === MULTIPLY) {
+				this.runningTotal = this.runningTotal * this.currentValue
+			} else if (this.currentIntention === DIVIDE) {
+				this.runningTotal = this.runningTotal / this.currentValue
+			} else {
+				throw new Error('No intention set')
 			}
 		} else {
 			this.runningTotal = this.currentValue
@@ -54,5 +62,17 @@ module.exports = {
 		this.currentIntention = SUBTRACT
 		this._equal()
 		this.currentValue = 0
-	}
+	},
+
+	multiply() {
+		this.currentIntention = MULTIPLY
+		this._equal()
+		this.currentValue = 0
+	},
+
+	divide() {
+		this.currentIntention = DIVIDE
+		this._equal()
+		this.currentValue = 0
+	},
 }
