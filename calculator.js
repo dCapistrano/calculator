@@ -17,7 +17,7 @@ module.exports = {
 
 	appendNumberToCurrent(number) {
 		if (number > 9) {
-			throw new TypeError(`Can't append more than one number at a time.`)
+			throw new Error(`Can't append more than one number at a time.`)
 			return
 		}
 

@@ -17,7 +17,7 @@ test('appendNumberToCurrent', t => {
 	cal.clear()
 	let error = t.throws(() => {
 		cal.appendNumberToCurrent(11)
-	}, TypeError)
+	}, Error)
 })
 
 test('equal', t => {
